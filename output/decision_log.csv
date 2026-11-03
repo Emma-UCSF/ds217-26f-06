@@ -1,1 +1,10 @@
 table,issue,decision,reason
+patients,exact duplicate rows,keep the first raw copy,identical in every raw column
+patients,gender spellings that are not a code,correct to codes only,M/F/NB only for convenience
+patients,site codes needing normalization,strip and lowercase,same site code typed differently
+patients,birth_year sentinel 9999,set to missing,birth year 9999 is missing
+visits,weight column named wt_kg in visits_south.csv,rename weight column,to match the other csv weight column
+visits,sbp sentinel 999 and readings outside 70 through 250,set to missing,sbp 999 is missing and lower than 70 or over 250 is impossible
+visits,impossible and loosely written visit dates,set to missing,probably typo in dates
+visits,repeated patient_id and visit pairs,keep the first row,identical in the extra record
+sites,repeated site_code rows,keep the first row,identical in the extra record
